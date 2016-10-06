@@ -9,6 +9,7 @@ class ProposalsController < ApplicationController
 
   def create
   	@proposal = Proposal.new(proposal_params)
+    @proposal.user_id = session[:user_id]
 
   	if @proposal.save
   	  redirect_to proposal_path(@proposal)

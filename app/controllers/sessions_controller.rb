@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_filter :require_login
+
   def new
   end
 
@@ -10,6 +12,7 @@ class SessionsController < ApplicationController
       redirect_to user_path(@user)
     else
       @errors = ['could not log in...']
+      render 'new'
     end
   end
 
@@ -21,7 +24,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to new_session_path
+    redirect_to root_path
   end
 
 end
