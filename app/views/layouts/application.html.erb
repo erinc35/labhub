@@ -9,10 +9,10 @@
   </head>
 
   <body>
-    <%= link_to 'Home', root_path %>
+    <%= link_to 'Home', proposals_path %>
     <% if session[:user_id] %>
       <p>
-        <%= link_to 'Log out', session_path, method: :delete, data: { confirm: 'Are you sure?'} %> 
+        <%= link_to 'Log out', sessions_path, method: :delete, data: { confirm: 'Are you sure?'} %> 
       </p>
     <% else %>
       <p>
@@ -20,7 +20,7 @@
       </p>  
 
       <p>
-        <%= link_to 'Log in', new_session_path %>
+        <%= link_to 'Log in', new_sessions_path %>
       </p> 
     <% end %>
     <%= yield %>

@@ -1,6 +1,8 @@
 <h1>Proposals</h1>
 
-<%= link_to 'New Proposal', new_proposal_path %>
+<% if session[:user_id] %>
+  <%= link_to 'New Proposal', new_proposal_path %>
+<% end %>
 
 <% @proposals.each do |proposal| %>
   <p>
