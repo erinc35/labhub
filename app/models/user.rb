@@ -2,6 +2,7 @@ require 'bcrypt'
 
 class User < ApplicationRecord
   include BCrypt
+  has_many :proposals
 
   def password
     @password ||= Password.new(password_hash)
