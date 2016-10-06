@@ -1,6 +1,10 @@
 class ProposalsController < ApplicationController
   def index
-  	@proposals = Proposal.all
+    if session[:user_id]
+  	  @proposals = Proposal.all
+    else
+      redirect_to new_sessions_path
+    end
   end
 
   def new

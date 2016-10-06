@@ -1,14 +1,13 @@
-<h1>Proposals</h1>
-
 <% if session[:user_id] %>
+  <h1>Proposals</h1>
   <%= link_to 'New Proposal', new_proposal_path %>
+	<% @proposals.each do |proposal| %>
+	  <p>
+	    <%= link_to proposal.title, proposal_path(proposal) %>
+	    <%= User.find(proposal.user_id).username %>
+	  </p>
+
+	<% end %>
 <% end %>
 
-<% @proposals.each do |proposal| %>
-  <p>
-    <%= link_to proposal.title, proposal_path(proposal) %>
-    <%= User.find(proposal.user_id).username %>
-  </p>
-
-<% end %>
 

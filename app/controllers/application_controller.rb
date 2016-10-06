@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   # def require_login
   # 	unless session[:user_id]
-  # 	  redirect_to sessions_path
+  # 	  redirect_to new_sessions_path
   # 	end
   # end
 end
