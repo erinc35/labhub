@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20161006184209) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "proposals", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "title"
@@ -19,7 +22,7 @@ ActiveRecord::Schema.define(version: 20161006184209) do
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
     t.string   "status",     default: "pending"
-    t.index ["user_id"], name: "index_proposals_on_user_id"
+    t.index ["user_id"], name: "index_proposals_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -33,4 +36,5 @@ ActiveRecord::Schema.define(version: 20161006184209) do
     t.string   "username"
   end
 
+  add_foreign_key "proposals", "users"
 end
