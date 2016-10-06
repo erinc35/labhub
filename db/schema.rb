@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005233807) do
+ActiveRecord::Schema.define(version: 20161006184209) do
 
   create_table "proposals", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "title"
     t.string   "abstract"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "status",     default: "pending"
     t.index ["user_id"], name: "index_proposals_on_user_id"
   end
 

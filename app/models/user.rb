@@ -9,7 +9,6 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :email, uniqueness: true
 
-
   def password
     @password ||= Password.new(password_hash)
   end
