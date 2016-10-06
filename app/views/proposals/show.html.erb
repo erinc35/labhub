@@ -1,9 +1,10 @@
-<h1><%= @proposal.title %></h1>
+<div class="form-div">
+  <form class="form">
+    <h2><%= @proposal.title %></h1>
 
-<p>
-  <%= User.find(@proposal.user_id).username %>
-</p>
+    <p>Author: <%= User.find(@proposal.user_id).username %></p>
 
-<body>
-  <%= @proposal.abstract %>
-</body>
+    <body><%= @proposal.abstract %></body>
+ </form>
+</div>
+

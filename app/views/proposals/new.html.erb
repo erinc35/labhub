@@ -1,12 +1,13 @@
 <h1>Create Proposal</h1>
-
+<div class="form-div">
+    <form class="form">
 <%= form_for @proposal do |f| %>
-  <p>
+  <p class="form-subject">
     <%= f.label :title %>
     <%= f.text_field :title %>
   </p>
 
-  <p>
+  <p class="form-text">
     <%= f.label :abstract %>
     <%= f.text_area :abstract %>
   </p>
@@ -15,3 +16,5 @@
   	<%= f.submit %>
   </p>
 <% end %>
+ </form>
+  </div>
