@@ -3,11 +3,11 @@ class ApplicationController < ActionController::Base
 
   # before_filter :require_login
 
-  # private
+  private
 
-  # def require_login
-  # 	unless session[:user_id]
-  # 	  redirect_to new_sessions_path
-  # 	end
-  # end
+  def require_login
+  	unless session[:user_id]
+  	  redirect_to new_sessions_path
+  	end
+  end
 end
