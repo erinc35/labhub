@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Labhub</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= link_to 'Home', proposals_path %>
+    <% if session[:user_id] %>
+      <p>
+        <%= link_to 'Log out', sessions_path, method: :delete, data: { confirm: 'Are you sure?'} %> 
+      </p>
+    <% else %>
+      <p>
+        <%= link_to 'Sign up', new_user_path %>
+      </p>  
+
+      <p>
+        <%= link_to 'Log in', new_sessions_path %>
+      </p> 
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

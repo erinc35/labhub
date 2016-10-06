@@ -1,0 +1,9 @@
+<h1><%= @proposal.title %></h1>
+
+<p>
+  <%= User.find(@proposal.user_id).username %>
+</p>
+
+<body>
+  <%= @proposal.abstract %>
+</body>
