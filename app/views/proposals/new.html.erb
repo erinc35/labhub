@@ -2,18 +2,18 @@
 <div class="form-div">
     <form class="form">
 <%= form_for @proposal do |f| %>
-  <p class="form-subject">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </p>
-
-  <p class="form-text">
-    <%= f.label :abstract %>
-    <%= f.text_area :abstract %>
+  <p>
+    <%= f.label :title%>
+    <%= f.text_field :title, class: "form-subject"   %>
   </p>
 
   <p>
-  	<%= f.submit %>
+    <%= f.label :abstract %>
+    <%= f.text_area :abstract, class: "form-text"  %>
+  </p>
+
+  <p>
+  	<%= f.submit value="Submit", class: "proposal-submit-button" %>
   </p>
 <% end %>
  </form>
