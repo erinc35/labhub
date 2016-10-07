@@ -1,3 +1,4 @@
+<h1>Experiment Page</h1>
 <h1><%= @experiment.title %></h1>
 
 <%= @experiment.body %>
@@ -6,7 +7,7 @@
   <% @experiment.comments.each do |comment| %>
     <p>
   	  <%= comment.body %>
-  	</p>  
+  	</p>
   <% end %>
 </ul>
 
@@ -36,4 +37,3 @@
 <%= link_to 'Add Component', new_experiment_component_path(@experiment) %>
 
 <%= link_to 'Comment', new_experiment_comment_path(@experiment, @comment) %>
-
