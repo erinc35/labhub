@@ -17,6 +17,8 @@
 
 $(document).ready(function(){
    commentOnPropButtonListener();
+
+   proposalApprovalButtonListnener();
 })
 
 var commentOnPropButtonListener = function(){
@@ -38,4 +40,8 @@ var commentOnPropButtonListener = function(){
         // $("#comment-form").css("display", "block")
       })
   })
+}
+
+var proposalApprovalButtonListnener = function(){
+  $("#approval_button")
 }
