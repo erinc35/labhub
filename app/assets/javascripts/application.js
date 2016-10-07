@@ -13,9 +13,9 @@ var commentOnPropButtonListener = function(){
         url: url
     })
       .done(function(form){
-        $("#comment-to-prop-form").append(form);
-        console.log(form)
-        $("#comment-to-prop-form").css("display", "block")
+        //debugger
+        $(".comment-form").append(form);
+        $(".comment-form").css("display", "block")
       })
   })
 }

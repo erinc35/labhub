@@ -6,6 +6,7 @@
       width: 70%;
       margin-left: 15%;
       margin-right: 10%;
+      margin-top: 3%;
     }
     .proposal-list {
       padding: 0;
@@ -170,4 +171,13 @@
           width: 70%;
           margin-left: 15%;
           margin-right: 10%;
+        }
+        .prop-h1{
+          text-align: center;
+          color: #002266;
+          text-shadow: 2px 2px 4px #D0D3D4;
+          font-family: Impact, Charcoal, sans-serif;
+        }
+        .nav-labhub{
+          font-family: Impact, Charcoal, sans-serif;
         }
