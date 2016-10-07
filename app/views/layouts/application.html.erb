@@ -17,22 +17,19 @@
       <a id="logo" href="/proposals"><img id="rabbit" <%= image_tag("labhub_logo.jpg") %> </a>
       <div class="nav">
         <%= link_to 'New Proposal', new_proposal_path %>
+         <% if session[:user_id] %>
+            <p><%= link_to 'Log out', sessions_path, method: :delete, data: { confirm: 'Are you sure?'} %></p>
+          <% else %>
+            <p><%= link_to 'Sign up', new_user_path %></p>
+            <p><%= link_to 'Log in', new_sessions_path %></p>
+          <% end %>
       </div>
-      <select class="form-select">
-        <option >My Account &#8595</option>
-        <option>My Page</option>
-        <option>Log Out</option>
-      </select>
+
     </div>
   </nav>
       <%= yield %>
 
-      <% if session[:user_id] %>
-        <p><%= link_to 'Log out', sessions_path, method: :delete, data: { confirm: 'Are you sure?'} %></p>
-      <% else %>
-        <p><%= link_to 'Sign up', new_user_path %></p>
-        <p><%= link_to 'Log in', new_sessions_path %></p>
-      <% end %>
+
   </body>
 </html>
 
