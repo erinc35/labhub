@@ -2,11 +2,12 @@ class Comment < ApplicationRecord
   belongs_to :commentable, polymorphic: true
   has_one :user, through: :experiments
 
-  before_save :assign_user_id
+  # before_save :assign_params
 
-  private
+  # private
 
-  def assign_user_id
-  	self.user_id = session[:user_id]
-  end
+  # def assign_params
+  # 	self.commentable_type = params[:commentable_type]
+  # 	sel.commentable_id = params[:id]
+  # end
 end
