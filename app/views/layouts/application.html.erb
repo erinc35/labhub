@@ -18,10 +18,10 @@
       <div class="nav">
         <%= link_to 'New Proposal', new_proposal_path %>
          <% if session[:user_id] %>
-            <p><%= link_to 'Log out', sessions_path, method: :delete, data: { confirm: 'Are you sure?'} %></p>
+            <p><%= link_to 'Log out', sessions_path, method: :delete, data: { confirm: 'Are you sure?'} %>
           <% else %>
-            <p><%= link_to 'Sign up', new_user_path %></p>
-            <p><%= link_to 'Log in', new_sessions_path %></p>
+            <%= link_to 'Sign up', new_user_path %>
+            <%= link_to 'Log in', new_sessions_path %></p>
           <% end %>
       </div>
 
