@@ -24,3 +24,16 @@
 	  </p>
 	<% end %>
 <%end%>
+
+<% if @component %>
+	<%= form_for(@comment, url: component_comments_path(@component.experiment_id)) do |f| %>
+	  <p>
+	  	<%= f.label :body %>
+	  	<%= f.text_area :body %>
+	  </p>
+
+	  <p>
+	    <%= f.submit %>
+	  </p>
+	<% end %>
+<%end%>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   # root 'proposals#index'
   root 'sessions#new'
 
@@ -12,9 +13,11 @@ Rails.application.routes.draw do
     
     resources :comments
 
-    resources :components do
-      resources :comments
-    end
+    resources :components
+  end
+
+  resources :components do
+    resources :comments
   end
 
   # resources :experiments do
