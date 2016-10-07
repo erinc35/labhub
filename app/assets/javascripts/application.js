@@ -22,19 +22,22 @@ $(document).ready(function(){
 })
 
 var commentOnPropButtonListener = function(){
-  $("#comment-to-prop-div").on("click", function(event){
+  $("#comment-button").on("click", function(event){
     event.preventDefault();
     console.log("ajax baby")
-      var url = $(this).attr('action');
+      var url = $(this).attr('href');
+      var button = $(this);
+      console.log($(this));
       console.log(url);
       $.ajax({
         method: "GET",
         url: url
     })
       .done(function(form){
-        $("#comment-to-prop-form").append(form);
-        console.log(form)
-        $("#comment-to-prop-form").css("display", "block")
+        $("#comment-form").append(form);
+        // console.log(form)
+        button.toggle()
+        // $("#comment-form").css("display", "block")
       })
   })
 }

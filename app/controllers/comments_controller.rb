@@ -1,9 +1,17 @@
 class CommentsController < ApplicationController
   def new
+
     @comment = Comment.new
-    @proposal = Proposal.find(params[:proposal_id]) if params[:proposal_id]
-    @experiment = Experiment.find(params[:experiment_id]) if params[:experiment_id]
-    @component = Component.find(params[:component_id]) if params[:component_id]
+    if request.xhr?
+      @proposal = Proposal.find(params[:proposal_id]) if params[:proposal_id]
+      @experiment = Experiment.find(params[:experiment_id]) if params[:experiment_id]
+      @component = Component.find(params[:component_id]) if params[:component_id]
+      render layout: false
+    else
+      @proposal = Proposal.find(params[:proposal_id]) if params[:proposal_id]
+      @experiment = Experiment.find(params[:experiment_id]) if params[:experiment_id]
+      @component = Component.find(params[:component_id]) if params[:component_id]
+    end
   end
 
   def create
@@ -14,9 +22,9 @@ class CommentsController < ApplicationController
     @comment = @proposal.comments.new(comment_params) if @proposal
     @comment = @experiment.comments.new(comment_params) if @experiment
     @comment = @component.comments.new(comment_params) if @component
-    
+
     @comment.user_id = session[:user_id]
-  	
+
     if @comment.save
   	  redirect_to proposal_path(@proposal) if @proposal
       redirect_to experiment_path(@experiment) if @experiment
