@@ -26,7 +26,7 @@
 <%end%>
 
 <% if @component %>
-	<%= form_for(@comment, url: component_comments_path(@component.experiment_id)) do |f| %>
+	<%= form_for(@comment, url: component_comments_path(@component)) do |f| %>
 	  <p>
 	  	<%= f.label :body %>
 	  	<%= f.text_area :body %>

@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
     if @comment.save
   	  redirect_to proposal_path(@proposal) if @proposal
       redirect_to experiment_path(@experiment) if @experiment
-      redirect_to experiment_path(@component) if @component
+      redirect_to experiment_path(@component.experiment_id) if @component
   	else
   	  render 'new'
   	end
