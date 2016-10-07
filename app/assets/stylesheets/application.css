@@ -1,3 +1,12 @@
+*{
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+body {
+  background-image: url('http://purebioguard.com/wp-content/uploads/2015/01/PBG-HD-Laboratory-1600x1050.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .proposals-div{
       position: relative;
       background-color: #F2F9FC;
@@ -6,6 +15,7 @@
       width: 70%;
       margin-left: 15%;
       margin-right: 10%;
+      margin-top: 3%;
     }
     .proposal-list {
       padding: 0;
@@ -73,12 +83,12 @@
       .proposal-submit-button{
         float: right;
 
-        padding: 6px 12px;
+        padding: 2px 12px;
         font-size: 14px;
         font-weight: 600;
         line-height: 20px;
         border-radius: 3px;
-        background-color: #8add6d;
+        background-color: #73CE53;
         border-color: #5ca941;
         color: #fff;
         text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
@@ -127,7 +137,7 @@
           /*margin: 7.5px -15px;*/
       }
       .nav {
-          padding-right: 490px;
+          padding-right: 2%;
           margin: 17px -15px;
           list-style: none;
           font-size: 13px;
@@ -159,3 +169,37 @@
         -moz-appearance: none;
         appearance: none;
         }
+        .prop-page-h2{
+          margin-top: 0.1px;
+        }
+        .comment-form{
+          position: relative;
+          background-color: #F2F9FC;
+          border: 1px solid #ddd;
+          border-radius: 3px;
+          width: 70%;
+          margin-left: 15%;
+          margin-right: 10%;
+        }
+        .prop-h1{
+          text-align: center;
+          color: #002266;
+          text-shadow: 2px 2px 4px #D0D3D4;
+          font-family: Impact, Charcoal, sans-serif;
+        }
+        .nav-labhub{
+          font-family: Impact, Charcoal, sans-serif;
+        }
+
+        .signup-form{
+          padding-left: 2%;
+        }
+        .signup-email{
+          margin-left: 3%;
+        }
+        .signup-button{
+          background-color: #F2F9FC;
+          border-color: #002266;
+          border-radius: 3px;
+        }
+

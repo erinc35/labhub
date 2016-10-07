@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :experiments do
-    
+
     resources :comments
 
     resources :components
@@ -27,12 +27,6 @@ Rails.application.routes.draw do
   # end
 
   resources :users
-  # resources :sessions, except: [:index, :show]
   resource :sessions, except: [:index, :show]
-  # get  '/sessions/new'
-  # post '/sessions'       
-  # delete '/sessions/'
-  # post   '/sessions': 'sessions#create'
-  # get    '/sessions/new': 'sessions#new'
-  # delete '/sessions': 'sessions#destroy'
+
 end
