@@ -52,8 +52,7 @@ body {
       width: 70%;
       margin-left: 15%;
       margin-right: 10%;
-      /*overflow: auto;*/
-      /*margin: 0 10%;*/
+      min-height: 20rem;
     }
 
     .container{
@@ -97,6 +96,7 @@ body {
 
       .form {
         margin: 0 5%;
+
       }
 
       .new-issue-form {
@@ -256,4 +256,9 @@ body {
       .button-div{
         text-align: right;
         width: 88%;
+      }
+      #comment_logo{
+        height: 25px;
+        width: 26px;
+        margin-left: 95%;
       }

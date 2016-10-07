@@ -1,31 +1,33 @@
-<h1>User Show</h1>
+<div class="signup-email">
+	<h1>User Show</h1>
 
-<p>
-	Username: <%= @user.username %>  	
-</p>
+	<p>
+		Username: <%= @user.username %>
+	</p>
 
-<p>
-	Email: <%= @user.email %>  	
-</p>
-	<% if @user.proposals.length > 0 %>
-		<h3> <%=@user.first_name%>'s Proposals</h3>
-		<% @user.proposals.each do |proposal| %>
-			<p> 
-				<%= proposal.title %> 
-				<% if proposal.status =='approved'%> 
-					Your proposal has been approved! 
-					<%=link_to "Create Experiment", new_proposal_experiment_path(proposal, @experiment)%>
-				<% else %>
-					<%=proposal.status%>
-				<% end %>
-			</p>
+	<p>
+		Email: <%= @user.email %>
+	</p>
+		<% if @user.proposals.length > 0 %>
+			<h3> <%=@user.first_name%>'s Proposals</h3>
+			<% @user.proposals.each do |proposal| %>
+				<p>
+					<%= proposal.title %>
+					<% if proposal.status =='approved'%>
+						Your proposal has been approved!
+						<%=link_to "Create Experiment", new_proposal_experiment_path(proposal, @experiment)%>
+					<% else %>
+						<%=proposal.status%>
+					<% end %>
+				</p>
+			<%end%>
 		<%end%>
+
+
+	<% if @user.experiments.length > 0 %>
+	<h3> <%=@user.first_name%>'s Experiments</h3>
+	<% @user.experiments.each do |experiment| %>
+	<p> <%= experiment.title %> </p>
 	<%end%>
-
-
-<% if @user.experiments.length > 0 %>
-<h3> <%=@user.first_name%>'s Experiments</h3>
-<% @user.experiments.each do |experiment| %>
-<p> <%= experiment.title %> </p>
-<%end%>
-<%end%>
+	<%end%>
+</div>
