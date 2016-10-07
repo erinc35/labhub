@@ -1,0 +1,7 @@
+<h1>Confirm Approval</h1>
+
+<%= form_for(@approval, url: proposal_approval_path(@proposal.id, @approval)) do |f| %>
+  <p>
+   <%= f.submit %>
+  </p>
+<% end %>

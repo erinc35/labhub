@@ -17,9 +17,11 @@
       <a id="logo" href="/proposals"><img id="rabbit" <%= image_tag("labhub_logo.jpg") %> </a>
       <div class="nav">
           <% if session[:user_id] %>
-            <p><%= link_to 'Log out', sessions_path, method: :delete, data: { confirm: 'Are you sure?'} %>
+            <p>
             <%= link_to 'New Proposal', new_proposal_path %>
-
+            <%= link_to 'Proposals', proposals_path %>
+            <%= link_to 'User Profile', user_path(session[:user_id]) %>
+            <%= link_to 'Log out', sessions_path, method: :delete, data: { confirm: 'Are you sure?'} %>
           <% else %>
             <%= link_to 'Sign up', new_user_path %>
             <%= link_to 'Log in', new_sessions_path %></p>

@@ -1,2 +1,18 @@
 <h1>Proposals#edit</h1>
-<p>Find me in app/views/proposals/edit.html.erb</p>
+<div class="form-div">
+        <%= form_for @proposal do |f| %>
+        <p>
+            <%= f.label :title%>
+            <%= f.text_field :title, class: "form-subject"   %>
+        </p>
+
+        <p>
+            <%= f.label :abstract %>
+            <%= f.text_area :abstract, class: "form-text"  %>
+        </p>
+
+        <p>
+            <%= f.submit value="Submit", class: "proposal-submit-button" %>
+        </p>
+        <% end %>
+</div>

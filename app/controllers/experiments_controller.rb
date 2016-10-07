@@ -7,9 +7,6 @@ class ExperimentsController < ApplicationController
   def new
     @proposal = Proposal.find(params[:proposal_id])
     @experiment = Experiment.new
-    Approval.create(user_id: session[:user_id], proposal_id: @proposal.id)
-    @proposal.status = "approved"
-    @proposal.save
   end
 
   def create
@@ -17,7 +14,9 @@ class ExperimentsController < ApplicationController
     @experiment = @proposal.experiments.new(experiment_params)
   	@experiment.title = @proposal.title
 
-  	if @experiment.save  	  
+  	if @experiment.save
+      @proposal.status = "in progress"  	 
+      @proposal.save 
   	  redirect_to proposal_experiment_path(@proposal.id, @experiment.id)
   	else
   	  render 'new'
@@ -28,10 +27,25 @@ class ExperimentsController < ApplicationController
     @experiment = Experiment.find(params[:id])
   end
 
+  def edit
+    @experiment = Experiment.find(params[:id])
+  end
+
   def update
+    @experiment = Experiment.find(params[:id])
+    @experiment.assign_attributes(experiment_params)
+
+    if @experiment.save
+      redirect_to experiment_path(@experiment)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @experiment = Experiment.find(params[:id])
+    @experiment.destroy
+    redirect_to proposals_path   
   end
 
   private
