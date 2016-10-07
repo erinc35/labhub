@@ -3,7 +3,7 @@ require 'bcrypt'
 class User < ApplicationRecord
   include BCrypt
   has_many :proposals
-  has_many :experiments, through: proposals
+  has_many :experiments, through: :proposals
   has_many :collaborations
 
   validates :username, presence: true
