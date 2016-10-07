@@ -78,7 +78,7 @@
         font-weight: 600;
         line-height: 20px;
         border-radius: 3px;
-        background-color: #8add6d;
+        background-color: #73CE53;
         border-color: #5ca941;
         color: #fff;
         text-shadow: 0 -1px 0 rgba(0,0,0,0.15);
@@ -158,4 +158,16 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
+        }
+        .prop-page-h2{
+          margin-top: 0.1px;
+        }
+        .comment-form{
+          position: relative;
+          background-color: #F2F9FC;
+          border: 1px solid #ddd;
+          border-radius: 3px;
+          width: 70%;
+          margin-left: 15%;
+          margin-right: 10%;
         }

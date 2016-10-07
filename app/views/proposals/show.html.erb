@@ -1,10 +1,16 @@
 <div class="form-div">
-  <form class="form">
-    <h2><%= @proposal.title %></h1>
+  <div class="form">
+    <h2 class="prop-page-h2"><%= @proposal.title %></h1>
 
     <p>Author: <%= User.find(@proposal.user_id).username %></p>
 
     <body><%= @proposal.abstract %></body>
- </form>
+    <div>
+      <%= form_for @proposal, html: {id: "comment-to-prop-div"} do |f| %>
+        <%= f.submit value="Comment", class: "proposal-submit-button" %>
+      <% end %>
+    </div>
+ </div>
 </div>
+<div  class="comment-form"></div>
 

@@ -1,3 +1,33 @@
+$(document).ready(function(){
+   commentOnPropButtonListener();
+})
+
+var commentOnPropButtonListener = function(){
+  $("#comment-to-prop-div").on("click", function(event){
+    event.preventDefault();
+    console.log("ajax baby")
+      var url = $(this).attr('action');
+      console.log(url);
+      $.ajax({
+        method: "GET",
+        url: url
+    })
+      .done(function(form){
+        $("#comment-to-prop-form").append(form);
+        console.log(form)
+        $("#comment-to-prop-form").css("display", "block")
+      })
+  })
+}
+
+
+
+
+
+
+
+
+
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
