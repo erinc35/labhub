@@ -1,3 +1,8 @@
+body {
+  background-image: url('http://purebioguard.com/wp-content/uploads/2015/01/PBG-HD-Laboratory-1600x1050.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .proposals-div{
       position: relative;
       background-color: #F2F9FC;
@@ -180,4 +185,11 @@
         }
         .nav-labhub{
           font-family: Impact, Charcoal, sans-serif;
+        }
+
+        .signup-form{
+          padding-left: 2%;
+        }
+        .signup-email{
+          margin-left: 3%;
         }
