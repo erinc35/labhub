@@ -1,6 +1,6 @@
 <div class="form-div">
   <form class="form">
-    <h2><%= @proposal.title %></h1>
+    <h2><%= @proposal.title %></h2>
 
     <p>Author: <%= User.find(@proposal.user_id).username %></p>
 
@@ -8,3 +8,17 @@
  </form>
  <%= render "notifiers" %>
 </div>
+
+<ul>
+  <% @proposal.comments.each do |comment| %>
+    <li><%= comment.body %></li>
+  <% end %>
+</ul>
+
+<% if @proposal.status == "approved" %>
+  <%= link_to 'Go to experiment', proposal_experiment_path(@proposal, @proposal.experiments.first) %>
+<% else %>
+  <%= link_to 'Approve Experiment', new_proposal_experiment_path(@proposal, @experiment)%>
+<% end %>
+
+<%= link_to 'Comment', new_proposal_comment_path(@proposal, @comment) %>

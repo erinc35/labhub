@@ -1,0 +1,10 @@
+
+  <h2><%= @proposal.title %></h2>
+
+    <%= form_for(@experiment, url: proposal_experiments_path(@proposal)) do |f| %>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+    <%= f.submit %>
+  <% end %>
+
+

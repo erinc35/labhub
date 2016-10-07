@@ -1,10 +1,31 @@
 Rails.application.routes.draw do
+
   # root 'proposals#index'
   root 'sessions#new'
 
-  resources :proposals
+  resources :proposals do
+    resources :comments
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+    resources :experiments
+  end
+
+  resources :experiments do
+    
+    resources :comments
+
+    resources :components
+  end
+
+  resources :components do
+    resources :comments
+  end
+
+  # resources :experiments do
+  #   resources :components do
+  #     resources :comments
+  #   end
+  # end
+
   resources :users
   # resources :sessions, except: [:index, :show]
   resource :sessions, except: [:index, :show]

@@ -1,0 +1,39 @@
+<h1><%= @experiment.title %></h1>
+
+<%= @experiment.body %>
+
+<ul>
+  <% @experiment.comments.each do |comment| %>
+    <p>
+  	  <%= comment.body %>
+  	</p>  
+  <% end %>
+</ul>
+
+<h2>Components</h2>
+<ul>
+  <% @experiment.components.each do |component| %>
+    <h3>
+  	  <%= component.type_of %>
+    </h3>
+
+    <p>
+      <%= component.body %>
+    </p>
+
+    <h4>Comments</h4>
+
+    <% component.comments.each do |comment| %>
+      <p>
+      	<%= comment.body %>
+      </p>
+    <% end %>
+
+    <%= link_to 'Comment', new_component_comment_path(component, @comment) %>
+  <% end %>
+</ul>
+
+<%= link_to 'Add Component', new_experiment_component_path(@experiment) %>
+
+<%= link_to 'Comment', new_experiment_comment_path(@experiment, @comment) %>
+
