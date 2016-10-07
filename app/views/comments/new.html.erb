@@ -1,11 +1,26 @@
 <h1>Comments#new</h1>
-<%= form_for(@comment, url: proposal_comments_path(@proposal)) do |f| %>
-  <p>
-  	<%= f.label :body %>
-  	<%= f.text_area :body %>
-  </p>
+<% if @proposal %>
+	<%= form_for(@comment, url: proposal_comments_path(@proposal)) do |f| %>
+	  <p>
+	  	<%= f.label :body %>
+	  	<%= f.text_area :body %>
+	  </p>
 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+	  <p>
+	    <%= f.submit %>
+	  </p>
+	<% end %>
+<%end%>
+
+<% if @experiment %>
+	<%= form_for(@comment, url: experiment_comments_path(@experiment)) do |f| %>
+	  <p>
+	  	<%= f.label :body %>
+	  	<%= f.text_area :body %>
+	  </p>
+
+	  <p>
+	    <%= f.submit %>
+	  </p>
+	<% end %>
+<%end%>
