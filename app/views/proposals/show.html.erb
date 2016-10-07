@@ -1,16 +1,31 @@
 <div class="form-div">
-  <div class="form">
-    <h2 class="prop-page-h2"><%= @proposal.title %></h1>
+    <div class="form">
+        <h2 class="prop-page-h2"><%= @proposal.title %></h1>
 
-    <p>Author: <%= User.find(@proposal.user_id).username %></p>
+        <p>Author:
+            <%= User.find(@proposal.user_id).username %></p>
 
-    <body><%= @proposal.abstract %></body>
-    <div>
-      <%= form_for @proposal, html: {id: "comment-to-prop-div"} do |f| %>
-        <%= f.submit value="Comment", class: "proposal-submit-button" %>
-      <% end %>
+        <body><%= @proposal.abstract %></body>
+        <div>
+            <%= form_for @proposal, html: {id: "comment-to-prop-div"} do |f| %>
+            <%= f.submit value="Comment", class: "proposal-submit-button" %>
+            <% end %>
+        </div>
     </div>
- </div>
+    <%= render "notifiers" %>
 </div>
-<div  class="comment-form"></div>
+<div class="comment-form"></div>
 
+<ul>
+    <% @proposal.comments.each do |comment| %>
+    <li><%= comment.body %></li>
+    <% end %>
+</ul>
+
+<% if @proposal.status == "approved" %>
+<%= link_to 'Go to experiment', proposal_experiment_path(@proposal, @proposal.experiments.first) %>
+<% else %>
+<%= link_to 'Approve Experiment', new_proposal_experiment_path(@proposal, @experiment)%>
+<% end %>
+
+<%= link_to 'Comment', new_proposal_comment_path(@proposal, @comment) %>

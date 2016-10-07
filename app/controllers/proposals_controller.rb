@@ -1,10 +1,8 @@
 class ProposalsController < ApplicationController
+  before_action :require_login
+
   def index
-    if session[:user_id]
-      @proposals = Proposal.all
-    else
-      redirect_to new_sessions_path
-    end
+  	@proposals = Proposal.all
   end
 
   def new

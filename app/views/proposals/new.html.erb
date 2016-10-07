@@ -1,20 +1,20 @@
 <h1>Create Proposal</h1>
 <div class="form-div">
-  <form class="form">
-    <%= form_for @proposal do |f| %>
-      <p>
-        <%= f.label :title%>
-        <%= f.text_field :title, class: "form-subject"   %>
-      </p>
+    <form class="form">
+        <%= form_for @proposal do |f| %>
+        <p>
+            <%= f.label :title%>
+            <%= f.text_field :title, class: "form-subject"   %>
+        </p>
 
-      <p>
-        <%= f.label :abstract %>
-        <%= f.text_area :abstract, class: "form-text"  %>
-      </p>
+        <p>
+            <%= f.label :abstract %>
+            <%= f.text_area :abstract, class: "form-text"  %>
+        </p>
 
-      <p>
-      	<%= f.submit value="Submit", class: "proposal-submit-button" %>
-      </p>
-    <% end %>
-  </form>
+        <p>
+            <%= f.submit value="Submit", class: "proposal-submit-button" %>
+        </p>
+        <% end %>
+    </form>
 </div>

@@ -1,30 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Proposals</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<h1>Proposals</h1>
 
-  </head>
-<body>
-
-    <h1 class="prop-h1">labhub</h1>
-
-    <section id="proposals" class="proposals-div">
-      <ul id="proposals-list" class="proposal-list">
+<div class="container">
+    <h3></h3>
+</div>
+<section id="proposals" class="proposals-div">
+    <ul id="proposals-list" class="proposal-list">
         <% @proposals.each do |proposal| %>
-          <li class="proposals-list-item">
+        <li class="proposals-list-item">
             <article id="proposal-<%= proposal.id %>" class="proposal">
-               <div class="proposal-details">
-                 <h3 class="proposal-title">
-                   <a href="/proposals/<%= proposal.id %>"><%= proposal.title%></a>
-                 </h1>
-                 <p class="proposal-detail-line">Proposed by: <%= User.find(proposal.user_id).username %></p>
-               </div>
+                <div class="proposal-details">
+                    <h3 class="proposal-title">
+                        <a href="/proposals/<%= proposal.id %>"><%= proposal.title%></a>
+                    </h1>
+                    <p class="proposal-detail-line">Proposed by:
+                        <%= User.find(proposal.user_id).username %></p>
+                </div>
             </article>
-          </li>
+        </li>
         <% end %>
-      </ul>
-    </section>
-</body>
-</html>
+    </ul>
+</section>
