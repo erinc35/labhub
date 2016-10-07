@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :comments
 
     resources :experiments
+
+    resources :approvals
   end
 
   resources :experiments do

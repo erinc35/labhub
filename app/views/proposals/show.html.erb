@@ -15,6 +15,9 @@
     </div>
     <%= render "notifiers" %>
 </div>
+<%= link_to 'Edit', edit_proposal_path(@proposal) %>
+<%= link_to 'Delete', proposal_path, method: :delete, data: { confirm: 'Are you sure?'} %>
+
 <div class="comment-form"></div>
 
 <ul>
@@ -23,10 +26,10 @@
     <% end %>
 </ul>
 
-<% if @proposal.status == "approved" %>
+<% if @proposal.experiments.length > 0 %>
 <%= link_to 'Go to experiment', proposal_experiment_path(@proposal, @proposal.experiments.first) %>
-<% else %>
-<%= link_to 'Approve Experiment', new_proposal_experiment_path(@proposal, @experiment)%>
+<% elsif @proposal.status != "approved" %>
+<%= link_to 'Approve Experiment', new_proposal_approval_path(@proposal), id:"approval_button"%>
 <% end %>
 
 <%= link_to 'Comment', new_proposal_comment_path(@proposal, @comment) %>

@@ -1,0 +1,19 @@
+<h1>Edit Experiment</h1>
+
+<div class="form-div">
+    <%= form_for @experiment do |f| %>
+      <p>
+          <%= f.label :title%>
+          <%= f.text_field :title, class: "form-subject"   %>
+      </p>
+
+      <p>
+          <%= f.label :body %>
+          <%= f.text_area :body, class: "form-text"  %>
+      </p>
+
+      <p>
+          <%= f.submit value="Submit", class: "experiment-submit-button" %>
+      </p>
+    <% end %>
+</div>
