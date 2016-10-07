@@ -2,5 +2,13 @@
 
 <%= @experiment.body %>
 
+<ul>
+  <% @experiment.comments.each do |comment| %>
+    <p>
+  	  <%= comment.body %>
+  	</p>  
+  <% end %>
+</ul>
+
 <%= link_to 'Comment', new_experiment_comment_path(@experiment, @comment) %>
 
