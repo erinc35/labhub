@@ -8,25 +8,25 @@
 
         <body><%= @proposal.abstract %></body>
         <div>
-            <%= form_for @proposal, html: {id: "comment-to-prop-div"} do |f| %>
-            <%= f.submit value="Comment", class: "proposal-submit-button" %>
+
+        </div><br><br>
+        <ul>
+            <% @proposal.comments.each do |comment| %>
+            <li><%= comment.body %></li>
             <% end %>
-        </div>
+        </ul>
     </div>
     <%= render "notifiers" %>
+    <% if @proposal.status == "approved" %>
+        <%= link_to 'Go to experiment', proposal_experiment_path(@proposal), class: "proposal-submit-button" %>
+    <% else %>
+        <%= link_to 'Approve Experiment', new_proposal_experiment_path(@proposal, @experiment), class: "proposal-submit-button"%>
+<% end %>
+
+<%= link_to 'Comment', new_proposal_comment_path(@proposal, @comment), class: "proposal-submit-button" %>
 </div>
 <div class="comment-form"></div>
 
-<ul>
-    <% @proposal.comments.each do |comment| %>
-    <li><%= comment.body %></li>
-    <% end %>
-</ul>
 
-<% if @proposal.status == "approved" %>
-<%= link_to 'Go to experiment', proposal_experiment_path(@proposal, @proposal.experiments.first) %>
-<% else %>
-<%= link_to 'Approve Experiment', new_proposal_experiment_path(@proposal, @experiment)%>
-<% end %>
 
-<%= link_to 'Comment', new_proposal_comment_path(@proposal, @comment) %>
+
