@@ -197,3 +197,9 @@ body {
         .signup-email{
           margin-left: 3%;
         }
+        .signup-button{
+          background-color: #F2F9FC;
+          border-color: #002266;
+          border-radius: 3px;
+        }
+
