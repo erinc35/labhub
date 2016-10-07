@@ -29,6 +29,6 @@
 
 <% if @proposal.experiments.length > 0 %>
 <%= link_to 'Go to experiment', proposal_experiment_path(@proposal, @proposal.experiments.first) %>
-<% elsif @proposal.status != "approved" %>
+<% elsif @proposal.status != "approved" && User.find(session[:user_id]).role == "admin" %>
 <%= link_to 'Approve Experiment', new_proposal_approval_path(@proposal), id:"approval_button"%>
 <% end %>

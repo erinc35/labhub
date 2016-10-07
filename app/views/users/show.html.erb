@@ -1,4 +1,16 @@
-<h1>User Show</h1>
+<% if @user.role == "admin" %>
+
+  <h1>Admin Show</h1>
+
+  <p>
+  	Approvals: <%= @approvals.count %>
+  </p>
+
+<% else %>
+
+  <h1>User Show</h1>
+
+<% end %>
 
 <p>
 	Username: <%= @user.username %>  	
@@ -29,3 +41,4 @@
 <p> <%= experiment.title %> </p>
 <%end%>
 <%end%>
+
