@@ -6,7 +6,7 @@ class ProposalsController < ApplicationController
   end
 
   def new
-  	@proposal = Proposal.new
+    @proposal = Proposal.new
   end
 
   def create
@@ -21,6 +21,7 @@ class ProposalsController < ApplicationController
   end
 
   def edit
+    @proposal = Proposal.find(params[:id])
   end
 
   def show
@@ -28,9 +29,20 @@ class ProposalsController < ApplicationController
   end
 
   def update
+    @proposal = Proposal.find(params[:id])
+    @proposal.assign_attributes(proposal_params)
+
+    if @proposal.save
+      redirect_to proposal_path(@proposal)
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @proposal = Proposal.find(params[:id])
+    @proposal.destroy
+    redirect_to proposals_path    
   end
 
   private

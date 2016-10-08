@@ -1,10 +1,30 @@
+<h1>Proposal Page</h1>
 <div class="form-div">
-  <form class="form">
-    <h2><%= @proposal.title %></h1>
+    <div class="form">
+        <h2 class="prop-page-h2"><%= @proposal.title %></h1>
 
-    <p>Author: <%= User.find(@proposal.user_id).username %></p>
+        <p>Author:
+            <%= User.find(@proposal.user_id).username %></p>
 
-    <body><%= @proposal.abstract %></body>
- </form>
- <%= render "notifiers" %>
+        <body><%= @proposal.abstract %></body>
+
+        <ul>
+            <% @proposal.comments.each do |comment| %>
+            <li><%= comment.body %></li>
+            <% end %>
+        </ul>
+    </div>
+    <%= render "notifiers" %>
+    
+
+<%= link_to 'Comment', new_proposal_comment_path(@proposal, @comment), id:"comment-button", class: "comment-submit-button" %>
 </div>
+<%= link_to 'Edit', edit_proposal_path(@proposal) %>
+<%= link_to 'Delete', proposal_path, method: :delete, data: { confirm: 'Are you sure?'} %>
+<div id="comment-form"></div>
+
+<% if @proposal.experiments.length > 0 %>
+<%= link_to 'Go to experiment', proposal_experiment_path(@proposal, @proposal.experiments.first) %>
+<% elsif @proposal.status != "approved" && User.find(session[:user_id]).role == "admin" %>
+<%= link_to 'Approve Experiment', new_proposal_approval_path(@proposal), id:"approval_button"%>
+<% end %>

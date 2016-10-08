@@ -12,5 +12,35 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+   commentOnPropButtonListener();
+
+   proposalApprovalButtonListnener();
+})
+
+var commentOnPropButtonListener = function(){
+  $("#comment-button").on("click", function(event){
+    event.preventDefault();
+    console.log("ajax baby")
+      var url = $(this).attr('href');
+      var button = $(this);
+      console.log($(this));
+      console.log(url);
+      $.ajax({
+        method: "GET",
+        url: url
+    })
+      .done(function(form){
+        $("#comment-form").append(form);
+        // console.log(form)
+        button.toggle()
+        // $("#comment-form").css("display", "block")
+      })
+  })
+}
+
+var proposalApprovalButtonListnener = function(){
+  $("#approval_button")
+}

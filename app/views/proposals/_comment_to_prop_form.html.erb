@@ -1,0 +1,12 @@
+<div <!-- id="comment-to-prop-form" class="form" -->>
+  <%= form_for @proposal do |f| %>
+    <p>
+      <%= f.label :abstract %>
+      <%= f.text_area :abstract, class: "form-text"  %>
+    </p>
+
+    <p>
+      <%= f.submit value="Submit Comment", class: "proposal-submit-button" %>
+    </p>
+  <% end %>
+</div>
