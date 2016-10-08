@@ -15,11 +15,7 @@
         </ul>
     </div>
     <%= render "notifiers" %>
-    <% if @proposal.status == "approved" %>
-        <%= link_to 'Go to experiment', proposal_experiment_path(@proposal), class: "exp-submit-button" %>
-    <% else %>
-        <%= link_to 'Approve Experiment', new_proposal_experiment_path(@proposal, @experiment), class: "comment-submit-button"%>
-    <% end %>
+    
 
 <%= link_to 'Comment', new_proposal_comment_path(@proposal, @comment), id:"comment-button", class: "comment-submit-button" %>
 </div>

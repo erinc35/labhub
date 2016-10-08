@@ -23,7 +23,7 @@
 		<h3> <%=@user.first_name%>'s Proposals</h3>
 		<% @user.proposals.each do |proposal| %>
 			<p> 
-				<%= proposal.title %> 
+				<%= link_to proposal.title, proposal_path(proposal) %> 
 				<% if proposal.status =='approved'%> 
 					Your proposal has been approved! 
 					<%=link_to "Create Experiment", new_proposal_experiment_path(proposal, @experiment)%>
