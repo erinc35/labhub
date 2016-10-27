@@ -257,3 +257,9 @@ body {
         text-align: right;
         width: 88%;
       }
+
+      #comment_logo{
+        height: 25px;
+        width: 26px;
+        margin-left: 95%;
+      }
