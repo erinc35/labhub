@@ -14,11 +14,10 @@
                     </h1>
                     <p class="proposal-detail-line">Proposed by:
                         <%= User.find(proposal.user_id).username %>
-                        <%if proposal.comments.count==1 %>
-                            <%=proposal.comments.count%> comment </p>
-                        <%elsif proposal.comments.count>0 %>
-                            <%=proposal.comments.count%> comments </p>
-                        <%end%>
+                        <% if proposal.comments.count>0 %>    <img id="comment_logo" <%= image_tag("coment_logo.png") %>
+                            <%= proposal.comments.count %>
+
+                        <% end %>
                 </div>
             </article>
         </li>
