@@ -4,9 +4,7 @@ Labhub is a web application that allows scientists to create proposals which can
 
 You can check out the live version [here] (https://labhub-2016.herokuapp.com/).
 
-![homepage] (https://github.com/everysum1/insiderAPI/blob/development/app/assets/images/SmarterBearHomepage.png)
-
-![company-page] (https://github.com/everysum1/insiderAPI/blob/development/app/assets/images/SmarterBearCompany.png)
+![homepage] (https://github.com/mbigras/labhub/blob/develop/app/assets/images/labhub.png)
 
 ## Getting Started
 
@@ -23,7 +21,7 @@ rails 5.0.0
 ### Installing
 From the command terminal, clone the repository to your local directory...
 ```
-$ git clone https://github.com/erinc35/GuideMe.git
+$ git clone https://github.com/mbigras/labhub
 $ cd GuideMe
 ```
 
@@ -45,27 +43,14 @@ $ heroku create
 $ git push heroku master
 $ heroku open
 ```
-## Tech Used
 
-* [Ruby on Rails](http://api.rubyonrails.org/) - Backend API framework used
-* [jQuery](https://jquery.com/) - Write less, do more with jQuery
-* [Ajax](* [jQuery](https://jquery.com/) - Write less, do more with jQuery
-) -The use of the XMLHttpRequest object to communicate with server-side scripts.
-
-* [Stripe](https://stripe.com/docs/api) - Authenticates credit card payments
-* [Google Api](https://console.developers.google.com/?pli=1) - Google API Console lets you discover and use Google APIs, such as Google Maps and YouTube.
-* [Unsplash](https://unsplash.com/developers) - Library for high-res photos
-* [Chatty](http://josephndungu.com/tutorials/) -Gmail Like Chat Application
-* [Yelp Api](https://www.yelp.com/developers/documentation/v2/overview) -Search for businesses by location, keyword and category
-gmail-like-chat-application-in-ruby-on-rails
-* [HTTParty](https://github.com/jnunemaker/httparty) - Library used for making HTTP requests
 
 ## Authors
 
 * **Erinç Emer** - [Github](https://github.com/erinc35)
 * **Johnny Choo** - [Github](https://github.com/jchoo157)
-* **Angelica Pilarca** - [Github](https://github.com/APilarca)
-* **Hakim Joseph** - [Github](https://github.com/HakimJoseph)
+* **Mannah Kallon** - [Github](https://github.com/kenikall)
+* **Max Bigras** - [Github](https://github.com/mbigras)
 
 ## License
 
